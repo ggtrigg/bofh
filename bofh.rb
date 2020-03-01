@@ -2,6 +2,8 @@
 
 require 'sinatra'
 
+ENV['PATH_INFO'] = ENV['REDIRECT_PATHINFO']
+
 excuses = File.open('bofh_excuses.txt', 'r').readlines
 excuses.map! {|e| e.chomp }
 
